@@ -22,7 +22,7 @@ local plugin = {
     -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
     local servers = {
       -- https://github.com/pmizio/typescript-tools.nvim
-      -- tsserver = {},
+      tsserver = {},
       lua_ls = {
         -- cmd = {},
         -- filetypes = {},
@@ -38,8 +38,15 @@ local plugin = {
       },
     }
 
-    -- NOTE: Additional tools
-    local tools = {
+    -- NOTE: Additional linters
+    local linters = {
+      'eslint_d',
+      'markdownlint',
+    }
+
+    -- NOTE: Additional formatters
+    local formatters = {
+      'prettierd',
       'stylua',
     }
 
@@ -126,7 +133,8 @@ local plugin = {
     require('mason').setup()
 
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, tools or {})
+    vim.list_extend(ensure_installed, linters or {})
+    vim.list_extend(ensure_installed, formatters or {})
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

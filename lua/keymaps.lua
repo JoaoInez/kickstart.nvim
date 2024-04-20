@@ -32,6 +32,9 @@ vim.keymap.set('n', '<leader>ls', ':Lazy sync<CR>', { desc = '[L]azy [S]ync' })
 -- You can press `g?` for help in this menu.
 vim.keymap.set('n', '<leader>m', ':Mason<CR>', { desc = '[M]ason' })
 
+-- NOTE: Lsp keymaps
+vim.keymap.set('n', '<leader>i', ':LspInfo<CR>', { desc = 'LSP: [I]nfo' })
+
 -- NOTE:
 -- [[ Basic Autocommands ]]
 -- See `:help lua-guide-autocommands`
