@@ -4,6 +4,7 @@ local enabled = true
 -- See https://github.com/nvim-neo-tree/neo-tree.nvim
 local plugin = {
   'nvim-neo-tree/neo-tree.nvim',
+  event = 'VeryLazy',
   version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -21,6 +22,14 @@ local plugin = {
         mappings = {
           ['\\'] = 'close_window',
         },
+      },
+    },
+    event_handlers = {
+      {
+        event = 'file_opened',
+        handler = function()
+          require('neo-tree.command').execute { action = 'close' }
+        end,
       },
     },
   },

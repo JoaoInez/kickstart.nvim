@@ -20,6 +20,7 @@ local tokyonight = {
 local catppuccin = {
   'catppuccin/nvim',
   name = 'catppuccin',
+  lazy = false,
   priority = 1000,
   init = function()
     vim.cmd.colorscheme 'catppuccin'
@@ -44,6 +45,6 @@ local catppuccin = {
 }
 
 return {
-  tokyonight,
+  -- tokyonight,
   catppuccin,
 }
