@@ -2,10 +2,10 @@ local enabled = true
 
 -- NOTE: Neo-tree is a Neovim plugin to browse the file system
 -- See https://github.com/nvim-neo-tree/neo-tree.nvim
+-- And also https://github.com/nvim-neo-tree/neo-tree.nvim/wiki/Recipes#handle-rename-or-move-file-event
 local plugin = {
   'nvim-neo-tree/neo-tree.nvim',
   event = 'VeryLazy',
-  version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
@@ -13,17 +13,11 @@ local plugin = {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    { '<leader>n', ':Neotree reveal<CR>', desc = 'Open [N]eoTree' },
+    { '<leader>G', ':Neotree reveal git_status float<CR>', desc = 'Open Neotree [G]it' },
   },
   opts = {
     close_if_last_window = true,
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
-      },
-    },
     event_handlers = {
       {
         event = 'file_opened',

@@ -23,18 +23,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- NOTE: Lazy keymaps
-vim.keymap.set('n', '<leader>lo', ':Lazy<CR>', { desc = '[L]azy [O]pen' })
-vim.keymap.set('n', '<leader>lu', ':Lazy update<CR>', { desc = '[L]azy [U]update' })
-vim.keymap.set('n', '<leader>ls', ':Lazy sync<CR>', { desc = '[L]azy [S]ync' })
-
--- NOTE: Mason keymaps
--- You can press `g?` for help in this menu.
-vim.keymap.set('n', '<leader>m', ':Mason<CR>', { desc = '[M]ason' })
-
--- NOTE: Lsp keymaps
-vim.keymap.set('n', '<leader>i', ':LspInfo<CR>', { desc = 'LSP: [I]nfo' })
-
 -- NOTE:
 -- [[ Basic Autocommands ]]
 -- See `:help lua-guide-autocommands`

@@ -16,8 +16,11 @@ local plugin = {
       ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
       ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
       ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-      ['<leader>l'] = { name = '[L]azy', _ = 'which_key_ignore' },
       ['<leader>g'] = { name = '[G]oto', _ = 'which_key_ignore' },
+      ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
+      ['<leader>bc'] = { name = '[B]uffer [C]lose', _ = 'which_key_ignore' },
+      ['<leader>,'] = { name = '[,] Settings', _ = 'which_key_ignore' },
+      ['<leader>,l'] = { name = '[,] Settings: [L]azy', _ = 'which_key_ignore' },
     }
 
     -- NOTE: Visual mode

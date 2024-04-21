@@ -23,10 +23,8 @@ local plugin = {
     local servers = {
       -- https://github.com/pmizio/typescript-tools.nvim
       tsserver = {},
+      tailwindcss = {},
       lua_ls = {
-        -- cmd = {},
-        -- filetypes = {},
-        -- capabilities = {},
         settings = {
           Lua = {
             completion = {
@@ -49,6 +47,13 @@ local plugin = {
       'prettierd',
       'stylua',
     }
+
+    -- NOTE: Mason keymaps
+    -- You can press `g?` for help in this menu.
+    vim.keymap.set('n', '<leader>,m', ':Mason<CR>', { desc = '[,] Settings: [M]ason' })
+
+    -- NOTE: Lsp keymaps
+    vim.keymap.set('n', '<leader>,i', ':LspInfo<CR>', { desc = '[,] Settings: LSP [I]nfo' })
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),

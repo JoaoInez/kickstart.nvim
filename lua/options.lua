@@ -64,3 +64,6 @@ vim.opt.shiftwidth = 2
 
 -- NOTE: Enable 24-bit colour
 vim.opt.termguicolors = true
+
+-- NOTE: Show column edge
+vim.opt.colorcolumn = '80'
