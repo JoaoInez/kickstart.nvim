@@ -20,15 +20,15 @@ return {
     { '<leader>b7', '<Cmd>BufferLineGoToBuffer 7<CR>', desc = 'Go to [B]uffer [7]' },
     { '<leader>b8', '<Cmd>BufferLineGoToBuffer 8<CR>', desc = 'Go to [B]uffer [8]' },
     { '<leader>b9', '<Cmd>BufferLineGoToBuffer 9<CR>', desc = 'Go to [B]uffer [9]' },
-    { '<leader>bcp', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = '[B]uffers: [C]lose non-[P]inned' },
-    { '<leader>bco', '<Cmd>BufferLineCloseOthers<CR>', desc = '[B]uffers: [C]lose [O]thers' },
-    { '<leader>bcr', '<Cmd>BufferLineCloseRight<CR>', desc = '[B]uffers: [C]lose to the [R]ight' },
-    { '<leader>bcl', '<Cmd>BufferLineCloseLeft<CR>', desc = '[B]uffers: [C]lose to the [L]eft' },
+    { '<leader>bn', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = '[B]uffers: Close non-[P]inned' },
+    { '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', desc = '[B]uffers: Close [O]thers' },
+    { '<leader>br', '<Cmd>BufferLineCloseRight<CR>', desc = '[B]uffers: Close to the [R]ight' },
+    { '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', desc = '[B]uffers: Close to the [L]eft' },
   },
   -- NOTE: See `:help bufferline-configuration` for more options
   opts = {
     options = {
-      numbers = 'ordinal',
+      diagnostics = 'nvim_lsp',
       offsets = {
         {
           filetype = 'neo-tree',

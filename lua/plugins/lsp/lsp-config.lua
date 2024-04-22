@@ -1,5 +1,4 @@
 -- NOTE: LSP Configuration & Plugins
--- See `:help lsp-vs-treesitter`
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -10,14 +9,6 @@ return {
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
-    -- NOTE: Enable the following language servers
-    -- Add any additional override configuration in the following tables. Available keys are:
-    -- - cmd (table): Override the default command used to start the server
-    -- - filetypes (table): Override the default list of associated filetypes for the server
-    -- - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-    -- - settings (table): Override the default settings passed when initializing the server.
-    -- For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-    -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
     local servers = {
       lua_ls = {
         settings = {
@@ -30,7 +21,44 @@ return {
         },
       },
       -- https://github.com/pmizio/typescript-tools.nvim
-      tsserver = {},
+      tsserver = {
+        on_attach = function()
+          vim.keymap.set('n', '<leader>co', function()
+            vim.lsp.buf.code_action {
+              apply = true,
+              context = {
+                only = { 'source.organizeImports.ts' },
+                diagnostics = {},
+              },
+            }
+          end, { desc = '[C]ode: [O]rganize imports' })
+
+          vim.keymap.set('n', '<leader>cr', function()
+            vim.lsp.buf.code_action {
+              apply = true,
+              context = {
+                only = { 'source.removeUnusedImports.ts' },
+                diagnostics = {},
+              },
+            }
+          end, { desc = '[C]ode: [R]emove unused imports' })
+
+          vim.keymap.set('n', '<leader>cm', function()
+            vim.lsp.buf.code_action {
+              apply = true,
+              context = {
+                only = { 'source.addMissingImports.ts' },
+                diagnostics = {},
+              },
+            }
+          end, { desc = '[C]ode: Add [M]issing imports' })
+        end,
+        settings = {
+          completions = {
+            completeFunctionCalls = true,
+          },
+        },
+      },
       tailwindcss = {},
     }
 
