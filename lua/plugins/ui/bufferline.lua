@@ -1,8 +1,6 @@
-local enabled = true
-
 -- NOTE: Tabs plugin
 -- See `:h bufferline.nvim` and https://github.com/akinsho/bufferline.nvim
-local plugin = {
+return {
   'akinsho/bufferline.nvim',
   dependencies = 'nvim-tree/nvim-web-devicons',
   event = 'VeryLazy',
@@ -11,7 +9,7 @@ local plugin = {
     { '<Tab>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
     { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
     { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
-    { '<leader>x', '<cmd>bd<cr>', desc = '[X] Close current buffer' },
+    { '<leader>x', '<cmd>bd<cr>', desc = 'Close current buffer' },
     { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', desc = '[B]uffers: Toggle [P]in' },
     { '<leader>b1', '<Cmd>BufferLineGoToBuffer 1<CR>', desc = 'Go to [B]uffer [1]' },
     { '<leader>b2', '<Cmd>BufferLineGoToBuffer 2<CR>', desc = 'Go to [B]uffer [2]' },
@@ -42,5 +40,3 @@ local plugin = {
     },
   },
 }
-
-return enabled and plugin or {}

@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Show pending keybinds.
-local plugin = {
+return {
   'folke/which-key.nvim',
   event = 'VimEnter',
   config = function()
@@ -15,7 +13,7 @@ local plugin = {
       ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
       ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
       ['<leader>T'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-      ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+      ['<leader>G'] = { name = '[G]it', _ = 'which_key_ignore' },
       ['<leader>g'] = { name = '[G]oto', _ = 'which_key_ignore' },
       ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
       ['<leader>bc'] = { name = '[B]uffer [C]lose', _ = 'which_key_ignore' },
@@ -29,5 +27,3 @@ local plugin = {
     }, { mode = 'v' })
   end,
 }
-
-return enabled and plugin or {}

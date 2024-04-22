@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Dashboard
-local plugin = {
+return {
   'goolord/alpha-nvim',
   dependencies = {
     'nvim-tree/nvim-web-devicons',
@@ -45,7 +43,7 @@ local plugin = {
     }
 
     alpha.setup(theta.config)
+
+    vim.cmd [[autocmd FileType alpha setlocal nofoldenable]]
   end,
 }
-
-return enabled and plugin or {}

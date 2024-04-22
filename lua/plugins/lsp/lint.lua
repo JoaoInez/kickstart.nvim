@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Linting
-local plugin = {
+return {
   'mfussenegger/nvim-lint',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
@@ -36,5 +34,3 @@ local plugin = {
     })
   end,
 }
-
-return enabled and plugin or {}

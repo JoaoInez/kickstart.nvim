@@ -1,11 +1,9 @@
-local enabled = true
-
 -- NOTE: Fuzzy Finder (files, lsp, etc)
 -- See :Telescope help_tags
 -- Two important keymaps to use while in Telescope are:
 --  - Insert mode: <c-/>
 --  - Normal mode: ?
-local plugin = {
+return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
   branch = '0.1.x',
@@ -83,5 +81,3 @@ local plugin = {
     end, { desc = '[F]ind [N]eovim files' })
   end,
 }
-
-return enabled and plugin or {}

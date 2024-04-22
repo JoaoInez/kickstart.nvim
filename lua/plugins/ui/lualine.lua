@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Status line
-local plugin = {
+return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
@@ -11,5 +9,3 @@ local plugin = {
     },
   },
 }
-
-return enabled and plugin or {}

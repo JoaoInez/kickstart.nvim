@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Collection of various small independent plugins/modules
-local plugin = {
+return {
   'echasnovski/mini.nvim',
   config = function()
     -- NOTE: Better Around/Inside textobjects
@@ -29,5 +27,3 @@ local plugin = {
     }
   end,
 }
-
-return enabled and plugin or {}

@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Autoformat
-local plugin = {
+return {
   'stevearc/conform.nvim',
   lazy = false,
   keys = {
@@ -35,5 +33,3 @@ local plugin = {
     },
   },
 }
-
-return enabled and plugin or {}

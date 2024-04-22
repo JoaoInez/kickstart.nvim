@@ -1,8 +1,6 @@
-local enabled = true
-
 -- NOTE: Autocompletion
 -- See `:help cmp`
-local plugin = {
+return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   dependencies = {
@@ -93,5 +91,3 @@ local plugin = {
     }
   end,
 }
-
-return enabled and plugin or {}

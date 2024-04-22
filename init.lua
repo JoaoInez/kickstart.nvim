@@ -26,11 +26,8 @@ vim.g.maplocalleader = ' '
 -- NOTE: Enable nerd font
 vim.g.have_nerd_font = true
 
--- NOTE: Neovim options
-require 'options'
-
--- NOTE: Neovim keymaps
-require 'keymaps'
+-- NOTE: Neovim core
+require 'core'
 
 -- NOTE: Lazy config
 require 'lazy-config'

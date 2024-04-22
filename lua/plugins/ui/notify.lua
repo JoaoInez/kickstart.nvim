@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Notification
-local plugin = {
+return {
   'rcarriga/nvim-notify',
   opts = {
     background_colour = '#000000',
@@ -13,5 +11,3 @@ local plugin = {
     vim.notify = require 'notify'
   end,
 }
-
-return enabled and plugin or {}

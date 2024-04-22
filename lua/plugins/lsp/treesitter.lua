@@ -1,8 +1,6 @@
-local enabled = true
-
 -- NOTE: Highlight, edit, and navigate code
 -- See `:help nvim-treesitter`
-local plugin = {
+return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   opts = {
@@ -31,5 +29,3 @@ local plugin = {
     -- - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   end,
 }
-
-return enabled and plugin or {}

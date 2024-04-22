@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: Terminal
-local plugin = {
+return {
   'akinsho/toggleterm.nvim',
   opts = {
     open_mapping = [[<leader>t]],
@@ -9,5 +7,3 @@ local plugin = {
     terminal_mappings = false,
   },
 }
-
-return enabled and plugin or {}

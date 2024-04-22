@@ -1,7 +1,5 @@
-local enabled = true
-
 -- NOTE: UI
-local plugin = {
+return {
   'folke/noice.nvim',
   event = 'VeryLazy',
   dependencies = {
@@ -43,5 +41,3 @@ local plugin = {
     },
   },
 }
-
-return enabled and plugin or {}

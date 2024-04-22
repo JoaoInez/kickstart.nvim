@@ -1,8 +1,6 @@
-local enabled = true
-
 -- NOTE: LSP Configuration & Plugins
 -- See `:help lsp-vs-treesitter`
-local plugin = {
+return {
   'neovim/nvim-lspconfig',
   dependencies = {
     { 'williamboman/mason.nvim', config = true },
@@ -156,5 +154,3 @@ local plugin = {
     }
   end,
 }
-
-return enabled and plugin or {}

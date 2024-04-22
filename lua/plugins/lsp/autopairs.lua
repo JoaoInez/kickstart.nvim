@@ -1,8 +1,6 @@
-local enabled = true
-
 -- NOTE: Autopairs
 -- See https://github.com/windwp/nvim-autopairs
-local plugin = {
+return {
   'windwp/nvim-autopairs',
   event = 'InsertEnter',
   dependencies = { 'hrsh7th/nvim-cmp' },
@@ -15,5 +13,3 @@ local plugin = {
     cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
   end,
 }
-
-return enabled and plugin or {}

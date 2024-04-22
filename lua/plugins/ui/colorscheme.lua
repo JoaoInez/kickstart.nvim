@@ -1,13 +1,14 @@
+---@diagnostic disable: unused-local
 -- NOTE: Colorschemes
 -- Use `:Telescope colorscheme` to see what colorschemes are already installed.
 
 local tokyonight = {
   'folke/tokyonight.nvim',
   priority = 1000,
-  -- init = function()
-  --   vim.cmd.colorscheme 'tokyonight-night'
-  --   vim.cmd.hi 'Comment gui=none'
-  -- end,
+  init = function()
+    vim.cmd.colorscheme 'tokyonight-night'
+    vim.cmd.hi 'Comment gui=none'
+  end,
   opts = {
     transparent = true,
     styles = {
@@ -44,7 +45,4 @@ local catppuccin = {
   },
 }
 
-return {
-  -- tokyonight,
-  catppuccin,
-}
+return catppuccin
