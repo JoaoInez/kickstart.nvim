@@ -10,8 +10,12 @@ return {
 
   -- NOTE: Add indentation guides even on blank lines
   -- See `:help ibl`
-  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
+  --
+  -- { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
 
   -- NOTE: Preview colors
-  { 'NvChad/nvim-colorizer.lua', opts = {} },
+  { 'NvChad/nvim-colorizer.lua', opts = { user_default_options = { css = true, css_fn = true, tailwind = true } } },
+
+  -- NOTE: Cursor has same color as lualine mode
+  { 'mawkler/modicator.nvim', opts = {} },
 }

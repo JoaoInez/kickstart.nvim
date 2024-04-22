@@ -16,18 +16,17 @@ local plugin = {
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
-    -- NOTE: Simple and easy statusline.
-    --
-    -- local statusline = require 'mini.statusline'
-    --
-    -- statusline.setup { use_icons = vim.g.have_nerd_font }
-    --
-    -- ---@diagnostic disable-next-line: duplicate-set-field
-    -- statusline.section_location = function()
-    --   return '%2l:%-2v'
-    -- end
+    -- NOTE: Use ALT+<hjkl> to move text
+    require('mini.move').setup()
 
-    require('mini.move').setup {}
+    -- NOTE: Add indentation guides
+    require('mini.indentscope').setup {
+      draw = {
+        delay = 0,
+        animation = require('mini.indentscope').gen_animation.none(),
+      },
+      symbol = '│',
+    }
   end,
 }
 
