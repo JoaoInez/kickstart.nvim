@@ -5,15 +5,29 @@
 local tokyonight = {
   'folke/tokyonight.nvim',
   priority = 1000,
-  init = function()
-    vim.cmd.colorscheme 'tokyonight-night'
-    vim.cmd.hi 'Comment gui=none'
-  end,
+  -- init = function()
+  --   vim.cmd.colorscheme 'tokyonight-night'
+  --   vim.cmd.hi 'Comment gui=none'
+  -- end,
   opts = {
     transparent = true,
     styles = {
       sidebars = 'transparent',
       floats = 'transparent',
+    },
+  },
+}
+
+local rose_pine = {
+  'rose-pine/neovim',
+  priority = 1000,
+  -- init = function()
+  --   vim.cmd.colorscheme 'rose-pine'
+  -- end,
+  name = 'rose-pine',
+  opts = {
+    styles = {
+      transparency = true,
     },
   },
 }
@@ -45,4 +59,4 @@ local catppuccin = {
   },
 }
 
-return catppuccin
+return { tokyonight, rose_pine, catppuccin }

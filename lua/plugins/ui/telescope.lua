@@ -79,5 +79,8 @@ return {
     vim.keymap.set('n', '<leader>fn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[F]ind [N]eovim files' })
+
+    -- NOTE: Preview colorschemes
+    vim.keymap.set('n', '<leader>fc', '<cmd>Telescope colorscheme<CR>', { desc = '[F]ind [C]olorscheme' })
   end,
 }
