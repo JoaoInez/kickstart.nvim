@@ -2,7 +2,6 @@ local enabled = true
 
 -- NOTE: Autopairs
 -- See https://github.com/windwp/nvim-autopairs
-
 local plugin = {
   'windwp/nvim-autopairs',
   event = 'InsertEnter',

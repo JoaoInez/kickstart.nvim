@@ -23,6 +23,14 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- This won't work in all terminal emulators/tmux/etc.
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- NOTE: Page jumping centers cursor
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- NOTE: Search centers cursor
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
 -- NOTE:
 -- [[ Basic Autocommands ]]
 -- See `:help lua-guide-autocommands`

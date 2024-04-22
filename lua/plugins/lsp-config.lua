@@ -50,10 +50,10 @@ local plugin = {
 
     -- NOTE: Mason keymaps
     -- You can press `g?` for help in this menu.
-    vim.keymap.set('n', '<leader>,m', ':Mason<CR>', { desc = '[,] Settings: [M]ason' })
+    vim.keymap.set('n', '<leader>,m', '<cmd>Mason<CR>', { desc = '[,] Settings: [M]ason' })
 
     -- NOTE: Lsp keymaps
-    vim.keymap.set('n', '<leader>,i', ':LspInfo<CR>', { desc = '[,] Settings: LSP [I]nfo' })
+    vim.keymap.set('n', '<leader>,i', '<cmd>LspInfo<CR>', { desc = '[,] Settings: LSP [I]nfo' })
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),

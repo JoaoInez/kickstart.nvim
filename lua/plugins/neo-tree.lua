@@ -13,8 +13,8 @@ local plugin = {
   },
   cmd = 'Neotree',
   keys = {
-    { '<leader>n', ':Neotree reveal<CR>', desc = 'Open [N]eoTree' },
-    { '<leader>G', ':Neotree reveal git_status float<CR>', desc = 'Open Neotree [G]it' },
+    { '<leader>n', '<cmd>Neotree reveal<CR>', desc = 'Open [N]eoTree' },
+    { '<leader>G', '<cmd>Neotree reveal git_status float<CR>', desc = 'Open Neotree [G]it' },
   },
   opts = {
     close_if_last_window = true,

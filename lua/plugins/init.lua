@@ -8,11 +8,6 @@ return {
   -- NOTE:Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  -- NOTE: Add indentation guides even on blank lines
-  -- See `:help ibl`
-  --
-  -- { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
-
   -- NOTE: Preview colors
   { 'NvChad/nvim-colorizer.lua', opts = { user_default_options = { css = true, css_fn = true, tailwind = true } } },
 

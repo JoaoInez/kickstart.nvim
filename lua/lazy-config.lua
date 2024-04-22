@@ -9,9 +9,9 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- NOTE: Keymaps
-vim.keymap.set('n', '<leader>,lo', ':Lazy<CR>', { desc = '[,] Settings: [L]azy [O]pen' })
-vim.keymap.set('n', '<leader>,lu', ':Lazy update<CR>', { desc = '[,] Settings: [L]azy [U]update' })
-vim.keymap.set('n', '<leader>,ls', ':Lazy sync<CR>', { desc = '[,] Settings: [L]azy [S]ync' })
+vim.keymap.set('n', '<leader>,lo', '<cmd>Lazy<CR>', { desc = '[,] Settings: [L]azy [O]pen' })
+vim.keymap.set('n', '<leader>,lu', '<cmd>Lazy update<CR>', { desc = '[,] Settings: [L]azy [U]update' })
+vim.keymap.set('n', '<leader>,ls', '<cmd>Lazy sync<CR>', { desc = '[,] Settings: [L]azy [S]ync' })
 
 -- NOTE:
 -- [[ Configure and install plugins ]]

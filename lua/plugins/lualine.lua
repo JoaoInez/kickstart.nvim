@@ -1,7 +1,6 @@
 local enabled = true
 
 -- NOTE: Status line
-
 local plugin = {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
