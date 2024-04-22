@@ -19,11 +19,12 @@ return {
       ['<leader>bc'] = { name = '[B]uffer [C]lose', _ = 'which_key_ignore' },
       ['<leader>,'] = { name = '[,] Settings', _ = 'which_key_ignore' },
       ['<leader>,l'] = { name = '[,] Settings: [L]azy', _ = 'which_key_ignore' },
+      ['<leader>l'] = { name = '[L]ist', _ = 'which_key_ignore' },
     }
 
     -- NOTE: Visual mode
     require('which-key').register({
-      ['<leader>h'] = { 'Git [H]unk' },
+      ['<leader>G'] = { '[G]it' },
     }, { mode = 'v' })
   end,
 }

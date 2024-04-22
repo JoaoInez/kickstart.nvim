@@ -50,7 +50,7 @@ return {
     -- You can press `g?` for help in this menu.
     vim.keymap.set('n', '<leader>,m', '<cmd>Mason<CR>', { desc = '[,] Settings: [M]ason' })
 
-    -- NOTE: Lsp keymaps
+    -- NOTE: LSP keymaps
     vim.keymap.set('n', '<leader>,i', '<cmd>LspInfo<CR>', { desc = '[,] Settings: LSP [I]nfo' })
 
     vim.api.nvim_create_autocmd('LspAttach', {
