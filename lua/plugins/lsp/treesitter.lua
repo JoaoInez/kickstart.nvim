@@ -28,6 +28,7 @@ return {
       'toml',
       'xml',
       'yaml',
+      'tmux',
     },
     auto_install = true,
     highlight = {
