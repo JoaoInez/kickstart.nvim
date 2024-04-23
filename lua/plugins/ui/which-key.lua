@@ -16,7 +16,6 @@ return {
       ['<leader>G'] = { name = '[G]it', _ = 'which_key_ignore' },
       ['<leader>g'] = { name = '[G]oto', _ = 'which_key_ignore' },
       ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
-      ['<leader>bc'] = { name = '[B]uffer [C]lose', _ = 'which_key_ignore' },
       ['<leader>,'] = { name = '[,] Settings', _ = 'which_key_ignore' },
       ['<leader>,l'] = { name = '[,] Settings: [L]azy', _ = 'which_key_ignore' },
       ['<leader>l'] = { name = '[L]ist', _ = 'which_key_ignore' },

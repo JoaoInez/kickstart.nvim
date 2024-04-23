@@ -20,7 +20,7 @@ return {
     { '<leader>b7', '<Cmd>BufferLineGoToBuffer 7<CR>', desc = 'Go to [B]uffer [7]' },
     { '<leader>b8', '<Cmd>BufferLineGoToBuffer 8<CR>', desc = 'Go to [B]uffer [8]' },
     { '<leader>b9', '<Cmd>BufferLineGoToBuffer 9<CR>', desc = 'Go to [B]uffer [9]' },
-    { '<leader>bn', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = '[B]uffers: Close non-[P]inned' },
+    { '<leader>bn', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = '[B]uffers: Close [N]on-pinned' },
     { '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', desc = '[B]uffers: Close [O]thers' },
     { '<leader>br', '<Cmd>BufferLineCloseRight<CR>', desc = '[B]uffers: Close to the [R]ight' },
     { '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', desc = '[B]uffers: Close to the [L]eft' },
