@@ -9,7 +9,7 @@ return {
   },
   event = 'VeryLazy',
   keys = {
-    { '<leader>Cg', '<cmd>ChatGPT<CG>', desc = '[C]hat[G]PT' },
+    { '<leader>Cg', '<cmd>ChatGPT<CR>', desc = '[C]hat[G]PT' },
     { '<leader>Ce', '<cmd>ChatGPTEditWithInstruction<CR>', desc = '[C]hatGPT: [E]dit with instruction', mode = { 'n', 'v' } },
     { '<leader>Cc', '<cmd>ChatGPTRun grammar_correction<CR>', desc = '[C]hatGPT: Grammar [C]orrection', mode = { 'n', 'v' } },
     { '<leader>Ct', '<cmd>ChatGPTRun translate<CR>', desc = '[C]hatGPT: [T]ranslate', mode = { 'n', 'v' } },
