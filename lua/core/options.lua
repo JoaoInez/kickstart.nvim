@@ -73,3 +73,6 @@ vim.opt.termguicolors = true
 
 -- NOTE: Show column edge
 vim.opt.colorcolumn = '80'
+
+-- NOTE: Hide command line at the bottom
+vim.opt.cmdheight = 0
