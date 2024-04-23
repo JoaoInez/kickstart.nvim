@@ -50,8 +50,8 @@ vim.opt.listchars = {
   tab = '» ',
   trail = '·',
   nbsp = '␣',
-  lead = '·',
-  eol = '󱞣',
+  -- lead = '·',
+  -- eol = '󱞣',
 }
 
 -- NOTE: Enable live substitutions

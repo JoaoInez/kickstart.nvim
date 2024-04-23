@@ -11,4 +11,6 @@ return {
   require 'plugins.utils.mini',
 
   require 'plugins.utils.trouble',
+
+  require 'plugins.utils.vim-tmux-navigator',
 }
