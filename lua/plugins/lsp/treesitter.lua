@@ -2,6 +2,10 @@
 -- See `:help nvim-treesitter`
 return {
   'nvim-treesitter/nvim-treesitter',
+  dependencies = {
+    -- NOTE: Auto close html tags
+    'windwp/nvim-ts-autotag',
+  },
   build = ':TSUpdate',
   opts = {
     ensure_installed = {
@@ -38,6 +42,9 @@ return {
       additional_vim_regex_highlighting = { 'ruby' },
     },
     indent = { enable = true, disable = { 'ruby' } },
+    autotag = {
+      enable = true,
+    },
   },
   config = function(_, opts)
     -- NOTE:

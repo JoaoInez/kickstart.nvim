@@ -5,6 +5,8 @@ return {
   -- NOTE: Context aware comments in tsx
   { 'JoosepAlviste/nvim-ts-context-commentstring', lazy = true, opts = { enable_autocmd = false } },
 
+  require 'plugins.lsp.chatgpt',
+
   require 'plugins.lsp.comment',
 
   require 'plugins.lsp.autopairs',
