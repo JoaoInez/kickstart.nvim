@@ -8,6 +8,8 @@ return {
 
   require 'plugins.ui.colorscheme',
 
+  require 'plugins.ui.indent-blankline',
+
   require 'plugins.ui.lualine',
 
   require 'plugins.ui.neo-tree',

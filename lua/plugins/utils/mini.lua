@@ -18,12 +18,13 @@ return {
     require('mini.move').setup()
 
     -- NOTE: Add indentation guides
-    require('mini.indentscope').setup {
-      draw = {
-        delay = 0,
-        animation = require('mini.indentscope').gen_animation.none(),
-      },
-      symbol = '│',
-    }
+    --
+    -- require('mini.indentscope').setup {
+    --   draw = {
+    --     delay = 0,
+    --     animation = require('mini.indentscope').gen_animation.none(),
+    --   },
+    --   symbol = '│',
+    -- }
   end,
 }
