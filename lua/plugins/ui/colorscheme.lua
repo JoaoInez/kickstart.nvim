@@ -41,6 +41,11 @@ local catppuccin = {
     vim.cmd.colorscheme 'catppuccin'
   end,
   opts = {
+    custom_highlights = function(colors)
+      return {
+        LineNr = { fg = colors.subtext0 },
+      }
+    end,
     transparent_background = true,
     integrations = {
       cmp = true,
@@ -58,7 +63,7 @@ local catppuccin = {
       indent_blankline = {
         enabled = true,
         scope_color = 'lavender',
-        colored_indent_levels = true,
+        colored_indent_levels = false,
       },
     },
   },

@@ -5,16 +5,28 @@ return {
     indent = {
       char = '│',
       tab_char = '│',
-      highlight = {
-        'RainbowRed',
-        'RainbowYellow',
-        'RainbowBlue',
-        'RainbowOrange',
-        'RainbowGreen',
-        'RainbowViolet',
-        'RainbowCyan',
-      },
+      -- char = '',
+      -- highlight = {
+      --   'CursorColumn',
+      --   'Whitespace',
+      -- },
+      -- highlight = {
+      --   'RainbowRed',
+      --   'RainbowYellow',
+      --   'RainbowBlue',
+      --   'RainbowOrange',
+      --   'RainbowGreen',
+      --   'RainbowViolet',
+      --   'RainbowCyan',
+      -- },
     },
+    -- whitespace = {
+    --   highlight = {
+    --     'CursorColumn',
+    --     'Whitespace',
+    --   },
+    --   remove_blankline_trail = false,
+    -- },
     scope = { enabled = true },
     exclude = {
       filetypes = {
