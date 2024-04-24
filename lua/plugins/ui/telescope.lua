@@ -41,7 +41,6 @@ return {
       },
       extensions = {
         ['ui-select'] = {
-          -- require('telescope.themes').get_dropdown(),
           require('telescope.themes').get_cursor(),
         },
       },
@@ -68,9 +67,8 @@ return {
       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         previewer = false,
       })
-    end, { desc = '[/] Fuzzily search in current buffer' })
+    end, { desc = '[/] Fuzzily find in current buffer' })
 
-    -- NOTE: See `:help telescope.builtin.live_grep()` for information about particular keys
     vim.keymap.set('n', '<leader>f/', function()
       builtin.live_grep {
         grep_open_files = true,
@@ -85,5 +83,10 @@ return {
 
     -- NOTE: Preview colorschemes
     vim.keymap.set('n', '<leader>fc', '<cmd>Telescope colorscheme<CR>', { desc = '[F]ind [C]olorscheme' })
+
+    -- NOTE: View buffers
+    vim.keymap.set('n', '<leader>fb', function()
+      builtin.buffers(require('telescope.themes').get_dropdown())
+    end, { desc = '[F]ind [B]uffers' })
   end,
 }
