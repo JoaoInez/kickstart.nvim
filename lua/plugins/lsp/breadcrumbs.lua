@@ -4,7 +4,6 @@ return {
   dependencies = {
     { 'SmiteshP/nvim-navic' },
   },
-  opts = {},
   config = function()
     require('nvim-navic').setup {
       lsp = {
