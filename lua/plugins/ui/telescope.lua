@@ -26,7 +26,7 @@ return {
     -- See `:help telescope` and `:help telescope.setup()`
     require('telescope').setup {
       defaults = {
-        file_ignore_patterns = { 'node_modules', '.git' },
+        file_ignore_patterns = { '%.git/', 'node_modules/' },
         -- mappings = {
         --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         -- },

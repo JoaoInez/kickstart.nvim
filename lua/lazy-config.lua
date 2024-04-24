@@ -16,10 +16,10 @@ vim.keymap.set('n', '<leader>,ls', '<cmd>Lazy sync<CR>', { desc = '[,] Settings:
 -- NOTE:
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  require 'plugins.git',
   require 'plugins.lsp',
   require 'plugins.ui',
   require 'plugins.utils',
+  require 'plugins.git',
 }, {
   ui = {
     -- NOTE: If you are using a Nerd Font: set icons to an empty table which will use the
