@@ -26,7 +26,16 @@ return {
     -- See `:help telescope` and `:help telescope.setup()`
     require('telescope').setup {
       defaults = {
-        file_ignore_patterns = { '%.git/', 'node_modules/' },
+        file_ignore_patterns = {
+          '^.git/',
+          '^node_modules/',
+          '^.next/',
+          '%.ico',
+          '%.png',
+          '%.jpg',
+          '%.jpeg',
+          '%.gif',
+        },
         -- mappings = {
         --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         -- },
@@ -54,7 +63,9 @@ return {
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+    vim.keymap.set('n', '<leader>ff', function()
+      builtin.find_files { hidden = true, no_ignore = true }
+    end, { desc = '[F]ind [F]iles' })
     vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
@@ -88,5 +99,8 @@ return {
     vim.keymap.set('n', '<leader>fb', function()
       builtin.buffers(require('telescope.themes').get_dropdown())
     end, { desc = '[F]ind [B]uffers' })
+
+    -- NOTE: View messages from noice
+    vim.keymap.set('n', '<leader>fm', '<cmd>Noice telescope<CR>', { desc = '[F]ind [M]essages' })
   end,
 }

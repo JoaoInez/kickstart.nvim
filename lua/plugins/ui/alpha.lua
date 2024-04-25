@@ -31,7 +31,7 @@ return {
       { type = 'text', val = 'Quick actions', opts = { hl = 'SpecialComment', position = 'center' } },
       { type = 'padding', val = 1 },
       dashboard.button('n', '  [N]ew file', '<cmd>ene<CR>'),
-      dashboard.button('f', '󰈞  [F]ind file', '<cmd>Telescope find_files<CR>'),
+      dashboard.button('f', '󰈞  [F]ind file', '<cmd>Telescope find_files hidden=true no_ignore=true<CR>'),
       dashboard.button('g', '󰊄  [G]rep text', '<cmd>Telescope live_grep<CR>'),
       dashboard.button('r', '  [R]restore session', '<cmd>lua require("persistence").load()<CR>'),
       dashboard.button('q', '󰅚  [Q]uit', '<cmd>qa<CR>'),

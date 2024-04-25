@@ -74,9 +74,6 @@ vim.opt.termguicolors = true
 -- NOTE: Show column edge
 vim.opt.colorcolumn = '80'
 
--- NOTE: Hide command line at the bottom
-vim.opt.cmdheight = 0
-
 -- NOTE: Set folds based on treesitter
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
