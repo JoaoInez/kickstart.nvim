@@ -4,9 +4,9 @@ return {
 
   require 'plugins.ui.alpha',
 
-  require 'plugins.ui.bufferline',
-
   require 'plugins.ui.colorscheme',
+
+  require 'plugins.ui.harpoon',
 
   require 'plugins.ui.indent-blankline',
 
@@ -19,8 +19,6 @@ return {
   require 'plugins.ui.notify',
 
   require 'plugins.ui.telescope',
-
-  require 'plugins.ui.terminal',
 
   require 'plugins.ui.which-key',
 }
