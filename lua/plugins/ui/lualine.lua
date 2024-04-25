@@ -6,17 +6,42 @@ return {
     'letieu/harpoon-lualine',
   },
   config = function()
+    local function get_harpoon_indicator(prefix, suffix)
+      return function(harpoon_entry)
+        return (prefix or '') .. harpoon_entry.value .. (suffix or '')
+      end
+    end
+
     require('lualine').setup {
       options = {
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = { statusline = { 'alpha' } },
       },
+      tabline = {
+        lualine_c = {
+          '%=', -- make the indicator center
+          {
+            'harpoon2',
+            indicators = {
+              get_harpoon_indicator '(J) ',
+              get_harpoon_indicator '(K) ',
+              get_harpoon_indicator '(L) ',
+              get_harpoon_indicator '(;) ',
+            },
+            active_indicators = {
+              get_harpoon_indicator('(J) [', ']'),
+              get_harpoon_indicator('(K) [', ']'),
+              get_harpoon_indicator('(L) [', ']'),
+              get_harpoon_indicator('(;) [', ']'),
+            },
+            _separator = '  ',
+          },
+        },
+      },
       sections = {
         lualine_c = {
           'filename',
-          '%=', -- make the indicator center
-          'harpoon2',
         },
         lualine_x = {
           {

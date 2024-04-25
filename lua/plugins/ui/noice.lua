@@ -51,7 +51,6 @@ return {
             { find = 'yanked' },
             { find = 'more lines' },
             { find = 'fewer lines' },
-            { find = 'no lines' },
           },
         },
         opts = { skip = true },
