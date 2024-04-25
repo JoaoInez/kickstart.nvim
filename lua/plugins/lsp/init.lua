@@ -7,8 +7,6 @@ return {
 
   require 'plugins.lsp.autopairs',
 
-  require 'plugins.lsp.breadcrumbs',
-
   require 'plugins.lsp.chatgpt',
 
   require 'plugins.lsp.cmp',

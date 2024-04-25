@@ -24,24 +24,31 @@ return {
           {
             'harpoon2',
             indicators = {
-              get_harpoon_indicator '(J) ',
-              get_harpoon_indicator '(K) ',
-              get_harpoon_indicator '(L) ',
-              get_harpoon_indicator '(;) ',
+              get_harpoon_indicator '(U) ',
+              get_harpoon_indicator '(I) ',
+              get_harpoon_indicator '(O) ',
+              get_harpoon_indicator '(P) ',
             },
             active_indicators = {
-              get_harpoon_indicator('(J) [', ']'),
-              get_harpoon_indicator('(K) [', ']'),
-              get_harpoon_indicator('(L) [', ']'),
-              get_harpoon_indicator('(;) [', ']'),
+              get_harpoon_indicator('[', ']'),
+              get_harpoon_indicator('[', ']'),
+              get_harpoon_indicator('[', ']'),
+              get_harpoon_indicator('[', ']'),
             },
             _separator = '  ',
+            color = { bg = '#1e1e2e', fg = '#89b4fa' },
           },
         },
       },
       sections = {
         lualine_c = {
-          'filename',
+          {
+            'filename',
+            symbols = {
+              modified = '',
+              readonly = '',
+            },
+          },
         },
         lualine_x = {
           {

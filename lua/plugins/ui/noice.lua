@@ -47,10 +47,11 @@ return {
             { find = '%d+L, %d+B' },
             { find = '; after #%d+' },
             { find = '; before #%d+' },
+            { find = '%d fewer lines' },
+            { find = '%d more lines' },
             { find = 'written' },
             { find = 'yanked' },
-            { find = 'more lines' },
-            { find = 'fewer lines' },
+            { find = 'no lines' },
           },
         },
         opts = { skip = true },
@@ -59,6 +60,14 @@ return {
         filter = {
           event = 'msg_show',
           kind = 'search_count',
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
+          event = 'msg_show',
+          kind = 'wmsg',
+          find = 'No lines in buffer',
         },
         opts = { skip = true },
       },

@@ -50,13 +50,8 @@ local catppuccin = {
     integrations = {
       cmp = true,
       gitsigns = true,
-      nvimtree = true,
       treesitter = true,
       notify = false,
-      mini = {
-        enabled = true,
-        indentscope_color = '',
-      },
       telescope = {
         enabled = true,
       },
@@ -65,6 +60,7 @@ local catppuccin = {
         scope_color = 'lavender',
         colored_indent_levels = false,
       },
+      harpoon = true,
     },
   },
 }

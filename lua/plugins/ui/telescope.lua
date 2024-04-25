@@ -73,7 +73,7 @@ return {
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
     vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find open buffers' })
 
     vim.keymap.set('n', '<leader>/', function()
       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -95,11 +95,6 @@ return {
 
     -- NOTE: Preview colorschemes
     vim.keymap.set('n', '<leader>fc', '<cmd>Telescope colorscheme<CR>', { desc = '[F]ind [C]olorscheme' })
-
-    -- NOTE: View buffers
-    vim.keymap.set('n', '<leader>fb', function()
-      builtin.buffers(require('telescope.themes').get_dropdown())
-    end, { desc = '[F]ind [B]uffers' })
 
     -- NOTE: View messages from noice
     vim.keymap.set('n', '<leader>fm', '<cmd>Noice telescope<CR>', { desc = '[F]ind [M]essages' })
