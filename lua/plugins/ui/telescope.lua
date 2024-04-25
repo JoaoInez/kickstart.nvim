@@ -35,6 +35,7 @@ return {
           '%.jpg',
           '%.jpeg',
           '%.gif',
+          '%.DS_Store',
         },
         -- mappings = {
         --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
