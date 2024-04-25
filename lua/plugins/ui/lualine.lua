@@ -17,6 +17,9 @@ return {
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         disabled_filetypes = { statusline = { 'alpha' } },
+        refresh = {
+          tabline = 50,
+        },
       },
       tabline = {
         lualine_c = {
@@ -24,10 +27,10 @@ return {
           {
             'harpoon2',
             indicators = {
+              get_harpoon_indicator '(Y) ',
               get_harpoon_indicator '(U) ',
               get_harpoon_indicator '(I) ',
               get_harpoon_indicator '(O) ',
-              get_harpoon_indicator '(P) ',
             },
             active_indicators = {
               get_harpoon_indicator('[', ']'),
@@ -36,6 +39,7 @@ return {
               get_harpoon_indicator('[', ']'),
             },
             _separator = '  ',
+            icon = '',
             color = { bg = '#1e1e2e', fg = '#89b4fa' },
           },
         },
@@ -70,8 +74,6 @@ return {
       },
     }
 
-    vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
-    vim.keymap.set('n', '<Tab>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
     vim.keymap.set('n', '<leader>x', '<cmd>bdelete<cr>', { desc = 'Close current buffer' })
   end,
 }

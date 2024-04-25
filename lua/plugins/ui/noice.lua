@@ -66,7 +66,7 @@ return {
       {
         filter = {
           event = 'msg_show',
-          kind = 'wmsg',
+          kind = 'echo',
           find = 'No lines in buffer',
         },
         opts = { skip = true },
