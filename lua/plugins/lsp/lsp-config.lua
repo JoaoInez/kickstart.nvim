@@ -154,6 +154,16 @@ return {
             vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
           end, '[T]oggle Inlay [H]ints')
         end
+
+        -- NOTE: Change gutter icons
+        local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+        for type, icon in pairs(signs) do
+          local hl = 'DiagnosticSign' .. type
+          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        end
+
+        -- NOTE: global diagnostic settings
+        vim.diagnostic.config { update_in_insert = true }
       end,
     })
 

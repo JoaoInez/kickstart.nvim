@@ -8,53 +8,56 @@ return {
   config = function()
     local function get_harpoon_indicator(prefix, suffix)
       return function(harpoon_entry)
-        return (prefix or '') .. harpoon_entry.value .. (suffix or '')
+        local path = {}
+        local i = 1
+
+        for value in harpoon_entry.value:gmatch '([^/]+)' do
+          path[i] = value
+          i = i + 1
+        end
+
+        local trimmed_filename = path[#path - 1] .. '/' .. path[#path]
+
+        return (prefix or '') .. trimmed_filename .. (suffix or '')
       end
     end
 
     require('lualine').setup {
       options = {
         section_separators = { left = '', right = '' },
-        component_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
         disabled_filetypes = { statusline = { 'alpha' } },
         refresh = {
           tabline = 50,
         },
       },
       tabline = {
-        lualine_c = {
-          '%=', -- make the indicator center
-          {
-            'harpoon2',
-            indicators = {
-              get_harpoon_indicator '(Y) ',
-              get_harpoon_indicator '(U) ',
-              get_harpoon_indicator '(I) ',
-              get_harpoon_indicator '(O) ',
-            },
-            active_indicators = {
-              get_harpoon_indicator('[', ']'),
-              get_harpoon_indicator('[', ']'),
-              get_harpoon_indicator('[', ']'),
-              get_harpoon_indicator('[', ']'),
-            },
-            _separator = '  ',
-            icon = '',
-            color = { bg = '#1e1e2e', fg = '#89b4fa' },
-          },
-        },
-      },
-      sections = {
-        lualine_c = {
+        lualine_a = {
           {
             'filename',
             symbols = {
               modified = '',
               readonly = '',
             },
+            path = 4,
           },
         },
-        lualine_x = {
+        lualine_b = {
+          {
+            'harpoon2',
+            indicators = {
+              get_harpoon_indicator '[U] ',
+              get_harpoon_indicator '[I] ',
+              get_harpoon_indicator '[O] ',
+            },
+            active_indicators = { '[U] 󰷊', '[I] 󰷊', '[O] 󰷊' },
+            _separator = '  ',
+            icon = '',
+          },
+        },
+      },
+      sections = {
+        lualine_c = {
           {
             function()
               ---@diagnostic disable-next-line: undefined-field
@@ -66,6 +69,8 @@ return {
             end,
             color = { fg = '#fab387' },
           },
+        },
+        lualine_x = {
           'searchcount',
           'encoding',
           'fileformat',
