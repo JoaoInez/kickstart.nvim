@@ -50,7 +50,11 @@ return {
               get_harpoon_indicator '2. ',
               get_harpoon_indicator '3. ',
             },
-            active_indicators = { '1. 󰋱', '2. 󰋱', '3. 󰋱' },
+            active_indicators = {
+              get_harpoon_indicator('1. [', ']'),
+              get_harpoon_indicator('2. [', ']'),
+              get_harpoon_indicator('3. [', ']'),
+            },
             _separator = '  ',
           },
         },
