@@ -5,6 +5,9 @@ return {
     'lewis6991/gitsigns.nvim',
     opts = {
       current_line_blame = true,
+      current_line_blame_formatter_opts = {
+        relative_time = true,
+      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
@@ -32,14 +35,15 @@ return {
         end, { desc = 'Jump to previous git [C]hange' })
 
         -- NOTE: Actions
-        -- NOTE: visual mode
+        -- NOTE: Visual mode
         map('v', '<leader>Gs', function()
           gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, { desc = '[G]it [S]tage hunk' })
         map('v', '<leader>Gr', function()
           gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, { desc = '[G]it [R]eset hunk' })
-        -- NOTE: normal mode
+
+        -- NOTE: Normal mode
         map('n', '<leader>Gs', gitsigns.stage_hunk, { desc = '[G]it [S]tage hunk' })
         map('n', '<leader>Gr', gitsigns.reset_hunk, { desc = '[G]it [R]eset hunk' })
         map('n', '<leader>GS', gitsigns.stage_buffer, { desc = '[G]it [S]tage buffer' })
@@ -51,6 +55,7 @@ return {
         map('n', '<leader>GD', function()
           gitsigns.diffthis '@'
         end, { desc = '[G]it [D]iff against last commit' })
+
         -- NOTE: Toggles
         map('n', '<leader>Gt', gitsigns.toggle_deleted, { desc = '[G]it [T]oggle git show deleted' })
       end,

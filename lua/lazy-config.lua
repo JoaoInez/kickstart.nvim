@@ -19,8 +19,7 @@ require('lazy').setup({
   require 'plugins.git',
   require 'plugins.lsp',
   require 'plugins.ui',
-  require 'plugins.utils',
-  'ThePrimeagen/vim-be-good',
+  require 'plugins.tools',
 }, {
   ui = {
     -- NOTE: If you are using a Nerd Font: set icons to an empty table which will use the

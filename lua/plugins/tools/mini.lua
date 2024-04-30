@@ -14,7 +14,7 @@ return {
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
-    -- NOTE: Use ALT+<hjkl> to move text
+    -- NOTE: Use ALT + <hjkl> to move text
     require('mini.move').setup {
       mappings = {
         -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
@@ -32,13 +32,15 @@ return {
     }
 
     -- NOTE: Add indentation guides
-    --
-    -- require('mini.indentscope').setup {
-    --   draw = {
-    --     delay = 0,
-    --     animation = require('mini.indentscope').gen_animation.none(),
-    --   },
-    --   symbol = '│',
-    -- }
+    require('mini.indentscope').setup {
+      draw = {
+        delay = 0,
+        animation = require('mini.indentscope').gen_animation.none(),
+      },
+      symbol = '│',
+    }
+
+    -- NOTE: Toggle split arrays and objects with gS
+    require('mini.splitjoin').setup()
   end,
 }

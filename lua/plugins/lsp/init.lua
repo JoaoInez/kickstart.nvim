@@ -6,20 +6,12 @@ return {
   { 'JoosepAlviste/nvim-ts-context-commentstring', lazy = true, opts = { enable_autocmd = false } },
 
   require 'plugins.lsp.autopairs',
-
   require 'plugins.lsp.chatgpt',
-
   require 'plugins.lsp.cmp',
-
   require 'plugins.lsp.comment',
-
   require 'plugins.lsp.conform',
-
   require 'plugins.lsp.inc-rename',
-
   require 'plugins.lsp.lint',
-
   require 'plugins.lsp.lsp-config',
-
   require 'plugins.lsp.treesitter',
 }

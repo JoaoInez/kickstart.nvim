@@ -78,3 +78,7 @@ vim.opt.colorcolumn = '80'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false
+
+-- NOTE: Global diagnostic settings
+--
+-- vim.diagnostic.config { update_in_insert = true }

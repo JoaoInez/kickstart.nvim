@@ -9,71 +9,6 @@ return {
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
-    local servers = {
-      lua_ls = {
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-            -- diagnostics = { disable = { 'missing-fields' } },
-          },
-        },
-      },
-      -- https://github.com/pmizio/typescript-tools.nvim
-      tsserver = {
-        on_attach = function()
-          vim.keymap.set('n', '<leader>co', function()
-            vim.lsp.buf.code_action {
-              apply = true,
-              context = {
-                only = { 'source.organizeImports.ts' },
-                diagnostics = {},
-              },
-            }
-          end, { desc = '[C]ode: [O]rganize imports' })
-
-          vim.keymap.set('n', '<leader>cr', function()
-            vim.lsp.buf.code_action {
-              apply = true,
-              context = {
-                only = { 'source.removeUnusedImports.ts' },
-                diagnostics = {},
-              },
-            }
-          end, { desc = '[C]ode: [R]emove unused imports' })
-
-          vim.keymap.set('n', '<leader>cm', function()
-            vim.lsp.buf.code_action {
-              apply = true,
-              context = {
-                only = { 'source.addMissingImports.ts' },
-                diagnostics = {},
-              },
-            }
-          end, { desc = '[C]ode: Add [M]issing imports' })
-        end,
-        settings = {
-          completions = {
-            completeFunctionCalls = true,
-          },
-        },
-      },
-      tailwindcss = {},
-    }
-
-    -- NOTE: Additional linters
-    local linters = {
-      'eslint_d',
-      'markdownlint',
-    }
-
-    -- NOTE: Additional formatters
-    local formatters = {
-      'prettierd',
-      'stylua',
-    }
-
     -- NOTE: Mason keymaps
     -- You can press `g?` for help in this menu.
     vim.keymap.set('n', '<leader>,m', '<cmd>Mason<CR>', { desc = '[,] Settings: [M]ason' })
@@ -161,9 +96,6 @@ return {
           local hl = 'DiagnosticSign' .. type
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
         end
-
-        -- NOTE: global diagnostic settings
-        vim.diagnostic.config { update_in_insert = true }
       end,
     })
 
@@ -173,9 +105,12 @@ return {
 
     require('mason').setup()
 
+    local lsp_config = require 'config.lsp'
+    local servers = lsp_config.servers
+
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, linters or {})
-    vim.list_extend(ensure_installed, formatters or {})
+    vim.list_extend(ensure_installed, lsp_config.linters or {})
+    vim.list_extend(ensure_installed, lsp_config.formatters or {})
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

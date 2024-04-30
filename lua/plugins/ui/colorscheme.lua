@@ -7,7 +7,6 @@ local tokyonight = {
   priority = 1000,
   -- init = function()
   --   vim.cmd.colorscheme 'tokyonight-night'
-  --   vim.cmd.hi 'Comment gui=none'
   -- end,
   opts = {
     transparent = true,
@@ -41,27 +40,7 @@ local catppuccin = {
     vim.cmd.colorscheme 'catppuccin'
   end,
   opts = {
-    custom_highlights = function(colors)
-      return {
-        LineNr = { fg = colors.subtext0 },
-      }
-    end,
     transparent_background = true,
-    integrations = {
-      cmp = true,
-      gitsigns = true,
-      treesitter = true,
-      notify = false,
-      telescope = {
-        enabled = true,
-      },
-      indent_blankline = {
-        enabled = true,
-        scope_color = 'lavender',
-        colored_indent_levels = false,
-      },
-      harpoon = true,
-    },
   },
 }
 
