@@ -31,6 +31,12 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+-- NOTE: Navigate wrapped lines
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('n', 'gj', 'j', { desc = 'Skip wrapped line down' })
+vim.keymap.set('n', 'gk', 'k', { desc = 'Skip wrapped line up' })
+
 -- NOTE:
 -- [[ Basic Autocommands ]]
 -- See `:help lua-guide-autocommands`
