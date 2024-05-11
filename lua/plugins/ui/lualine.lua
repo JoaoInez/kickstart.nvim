@@ -3,24 +3,24 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    'letieu/harpoon-lualine',
+    -- 'letieu/harpoon-lualine',
   },
   config = function()
-    local function get_harpoon_indicator(prefix, suffix)
-      return function(harpoon_entry)
-        local path = {}
-        local i = 1
-
-        for value in harpoon_entry.value:gmatch '([^/]+)' do
-          path[i] = value
-          i = i + 1
-        end
-
-        local trimmed_filename = path[#path - 1] .. '/' .. path[#path]
-
-        return (prefix or '') .. trimmed_filename .. (suffix or '')
-      end
-    end
+    -- local function get_harpoon_indicator(prefix, suffix)
+    --   return function(harpoon_entry)
+    --     local path = {}
+    --     local i = 1
+    --
+    --     for value in harpoon_entry.value:gmatch '([^/]+)' do
+    --       path[i] = value
+    --       i = i + 1
+    --     end
+    --
+    --     local trimmed_filename = path[#path - 1] .. '/' .. path[#path]
+    --
+    --     return (prefix or '') .. trimmed_filename .. (suffix or '')
+    --   end
+    -- end
 
     require('lualine').setup {
       options = {
@@ -42,22 +42,22 @@ return {
             path = 4,
           },
         },
-        lualine_b = {
-          {
-            'harpoon2',
-            indicators = {
-              get_harpoon_indicator '1. ',
-              get_harpoon_indicator '2. ',
-              get_harpoon_indicator '3. ',
-            },
-            active_indicators = {
-              get_harpoon_indicator('1. [', ']'),
-              get_harpoon_indicator('2. [', ']'),
-              get_harpoon_indicator('3. [', ']'),
-            },
-            _separator = '  ',
-          },
-        },
+        -- lualine_b = {
+        --   {
+        --     'harpoon2',
+        --     indicators = {
+        --       get_harpoon_indicator '1. ',
+        --       get_harpoon_indicator '2. ',
+        --       get_harpoon_indicator '3. ',
+        --     },
+        --     active_indicators = {
+        --       get_harpoon_indicator('1. [', ']'),
+        --       get_harpoon_indicator('2. [', ']'),
+        --       get_harpoon_indicator('3. [', ']'),
+        --     },
+        --     _separator = '  ',
+        --   },
+        -- },
       },
       sections = {
         lualine_c = {
