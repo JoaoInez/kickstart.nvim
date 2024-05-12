@@ -12,6 +12,7 @@ M.formatters = {
   json = { 'prettierd' },
   jsonc = { 'prettierd' },
   yaml = { 'prettierd' },
+  -- c = { 'clang-format' },
 }
 
 return M

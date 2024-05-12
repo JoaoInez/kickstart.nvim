@@ -78,6 +78,7 @@ M.linters = {
 M.formatters = {
   'prettierd',
   'stylua',
+  'clang-format',
 }
 
 return M
