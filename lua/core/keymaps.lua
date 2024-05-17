@@ -10,7 +10,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>Q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- NOTE: Use CTRL+<hjkl> to switch between windows
 -- See `:help wincmd` for a list of all window commands
@@ -40,6 +40,8 @@ vim.keymap.set('n', 'gk', 'k', { desc = 'Skip wrapped line up' })
 -- NOTE: Use leader for vim actions
 vim.keymap.set('n', '<leader>s', '<cmd>w<CR>', { desc = '[S]ave current file' })
 vim.keymap.set('n', '<leader>x', '<cmd>xa<CR>', { desc = 'Save and e[X]it Neovim' })
+vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[Q]uickfix [O]pen' })
+vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[Q]uickfix [C]lose' })
 
 -- NOTE:
 -- [[ Basic Autocommands ]]

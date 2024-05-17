@@ -20,6 +20,7 @@ return {
       ['<leader>,l'] = { name = '[,] Settings: [L]azy', _ = 'which_key_ignore' },
       ['<leader>l'] = { name = '[L]ist', _ = 'which_key_ignore' },
       ['<leader>C'] = { name = '[C]hatGPT', _ = 'which_key_ignore' },
+      ['<leader>q'] = { name = '[Q]uickfix', _ = 'which_key_ignore' },
     }
 
     -- NOTE: Visual mode

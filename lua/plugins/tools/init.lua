@@ -9,7 +9,7 @@ return {
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   -- NOTE: Better quickfix menu
-  { 'kevinhwang91/nvim-bqf', event = 'VeryLazy', opts = {} },
+  { 'kevinhwang91/nvim-bqf', event = 'VeryLazy', opts = { func_map = { open = 'o', openc = '<CR>' } } },
 
   require 'plugins.tools.mini',
   require 'plugins.tools.trouble',
