@@ -1,10 +1,6 @@
 -- NOTE: Dashboard
 return {
   'goolord/alpha-nvim',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-    'nvim-lua/plenary.nvim',
-  },
   config = function()
     local alpha = require 'alpha'
     local theta = require 'alpha.themes.theta'
@@ -21,11 +17,6 @@ return {
       '█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █',
       '    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ',
     }
-    -- theta.header.opts = {
-    --   position = 'center',
-    --   hl = 'AlphaHeader',
-    --   -- wrap = "overflow";
-    -- }
 
     theta.buttons.val = {
       { type = 'text', val = 'Quick actions', opts = { hl = 'SpecialComment', position = 'center' } },

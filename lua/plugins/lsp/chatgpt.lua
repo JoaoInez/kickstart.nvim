@@ -19,12 +19,6 @@
 -- <C-d> [Edit Window] view the diff between left and right panes and use diff-mode commands
 return {
   'jackMort/ChatGPT.nvim',
-  dependencies = {
-    'MunifTanjim/nui.nvim',
-    'nvim-lua/plenary.nvim',
-    'folke/trouble.nvim',
-    'nvim-telescope/telescope.nvim',
-  },
   event = 'VeryLazy',
   keys = {
     { '<leader>Cg', '<cmd>ChatGPT<CR>', desc = '[C]hat[G]PT' },

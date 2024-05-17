@@ -16,6 +16,7 @@ vim.keymap.set('n', '<leader>,ls', '<cmd>Lazy sync<CR>', { desc = '[,] Settings:
 -- NOTE:
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
+  require 'plugins.dependencies',
   require 'plugins.git',
   require 'plugins.lsp',
   require 'plugins.ui',
