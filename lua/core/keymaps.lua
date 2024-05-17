@@ -37,6 +37,10 @@ vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', 'gj', 'j', { desc = 'Skip wrapped line down' })
 vim.keymap.set('n', 'gk', 'k', { desc = 'Skip wrapped line up' })
 
+-- NOTE: Use leader for vim actions
+vim.keymap.set('n', '<leader>s', '<cmd>w<CR>', { desc = '[S]ave current file' })
+vim.keymap.set('n', '<leader>x', '<cmd>xa<CR>', { desc = 'Save and e[X]it Neovim' })
+
 -- NOTE:
 -- [[ Basic Autocommands ]]
 -- See `:help lua-guide-autocommands`
