@@ -24,6 +24,7 @@ return {
   { 'mg979/vim-visual-multi', branch = 'master', event = 'VeryLazy' },
 
   require 'plugins.tools.mini',
+  require 'plugins.tools.spectre',
   require 'plugins.tools.trouble',
   require 'plugins.tools.vim-tmux-navigator',
 }
