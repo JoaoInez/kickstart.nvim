@@ -23,6 +23,7 @@ return {
   -- start insert mode with i,a,I,A
   { 'mg979/vim-visual-multi', branch = 'master', event = 'VeryLazy' },
 
+  require 'plugins.tools.flash',
   require 'plugins.tools.mini',
   require 'plugins.tools.spectre',
   require 'plugins.tools.trouble',
