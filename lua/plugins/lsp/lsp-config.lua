@@ -57,10 +57,6 @@ return {
         -- or a suggestion from your LSP for this to activate.
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-        -- NOTE: Opens a popup that displays documentation about the word under your cursor
-        -- See `:help K` for why this keymap.
-        map('K', vim.lsp.buf.hover, 'Hover Documentation')
-
         -- NOTE: This is not Goto Definition, this is Goto Declaration.
         -- For example, in C this would take you to the header.
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -84,9 +80,12 @@ return {
 
         -- NOTE: The following autocommand is used to enable inlay hints in your
         -- code, if the language server you are using supports them
-        if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+        if client and ((client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint) or client.supports_method 'textDocument/inlayHint') then
+          vim.lsp.inlay_hint.enable()
+
           map('<leader>th', function()
-            vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+            ---@diagnostic disable-next-line: missing-parameter
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
           end, '[T]oggle Inlay [H]ints')
         end
 
