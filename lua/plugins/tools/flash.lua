@@ -4,56 +4,21 @@ return {
   event = 'VeryLazy',
   keys = {
     {
-      'ss',
-      mode = { 'n', 'o', 'x' },
-      function()
-        require('flash').jump {
-          search = { forward = true, wrap = false, multi_window = false },
-        }
-      end,
-      desc = 'Flash forwards',
-    },
-    {
       'sb',
-      mode = { 'n', 'o', 'x' },
-      function()
-        require('flash').jump {
-          search = { forward = false, wrap = false, multi_window = false },
-        }
-      end,
-      desc = 'Flash backwards',
-    },
-    {
-      'sj',
-      mode = { 'n', 'o', 'x' },
-      function()
-        require('flash').jump()
-      end,
-      desc = 'Flash jump',
-    },
-    {
-      'sw',
-      mode = { 'n', 'o', 'x' },
-      function()
-        require('flash').jump {
-          pattern = vim.fn.expand '<cword>',
-        }
-      end,
-      desc = 'Flash word',
-    },
-    {
-      'st',
       mode = { 'n', 'o', 'x' },
       function()
         require('flash').treesitter()
       end,
-      desc = 'Flash Treesitter',
+      desc = 'Select block',
     },
   },
   opts = {
     modes = {
       search = {
         enabled = true,
+      },
+      char = {
+        jump_labels = true,
       },
     },
   },
