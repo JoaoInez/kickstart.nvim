@@ -9,13 +9,18 @@ return {
       return function(harpoon_entry)
         local path = {}
         local i = 1
+        local matched = harpoon_entry.value:gmatch '([^/]+)'
 
-        for value in harpoon_entry.value:gmatch '([^/]+)' do
-          path[i] = value
+        if not matched then
+          return 'unknown'
+        end
+
+        for value in matched do
+          path[i] = value and value or ''
           i = i + 1
         end
 
-        local trimmed_filename = path[#path - 1] .. '/' .. path[#path]
+        local trimmed_filename = #path > 1 and path[#path - 1] .. '/' .. path[#path] or path[1]
 
         return (prefix or '') .. trimmed_filename .. (suffix or '')
       end
