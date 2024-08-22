@@ -37,7 +37,7 @@ vim.keymap.set('n', 'gk', 'k', { desc = 'Skip wrapped line up' })
 
 -- NOTE: Use leader for vim actions
 vim.keymap.set('n', '<leader>s', '<cmd>w<CR>', { desc = '[S]ave current file' })
-vim.keymap.set('n', '<leader>x', '<cmd>xa<CR>', { desc = 'Save and e[X]it Neovim' })
+vim.keymap.set('n', '<leader>x', '<cmd>xa<CR>', { desc = '[X] Save and close Neovim' })
 vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>', { desc = '[Q]uickfix [O]pen' })
 vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>', { desc = '[Q]uickfix [C]lose' })
 
