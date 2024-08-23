@@ -24,6 +24,7 @@ return {
       dashboard.button('n', '  [N]ew file', '<cmd>ene<CR>'),
       dashboard.button('f', '󰈞  [F]ind file', '<cmd>Telescope find_files hidden=true no_ignore=true<CR>'),
       dashboard.button('g', '󰊄  [G]rep text', '<cmd>Telescope live_grep<CR>'),
+      dashboard.button('t', '󰙅  [T]ree view', '<cmd>Neotree reveal float<CR>'),
       dashboard.button('q', '󰅚  [Q]uit', '<cmd>qa<CR>'),
       { type = 'padding', val = 2 },
       { type = 'text', val = 'Settings', opts = { hl = 'SpecialComment', position = 'center' } },
