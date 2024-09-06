@@ -31,7 +31,7 @@ return {
     {
       '<leader>rc',
       function()
-        require('spectre').open_visual { select_word = true }
+        require('spectre').open_file_search { select_word = true }
       end,
       desc = '[R]eplace in [C]urrent file',
       mode = { 'n' },

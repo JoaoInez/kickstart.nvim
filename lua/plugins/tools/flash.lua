@@ -64,7 +64,9 @@ return {
         enabled = true,
       },
       char = {
-        jump_labels = true,
+        enabled = false,
+        jump_labels = false,
+        highlight = { backdrop = false },
       },
     },
   },
