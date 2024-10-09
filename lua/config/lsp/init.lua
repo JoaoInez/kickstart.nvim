@@ -3,7 +3,7 @@ local M = {}
 -- NOTE: Language servers
 M.servers = {
   lua_ls = require 'config.lsp.lua',
-  tsserver = require 'config.lsp.typescript',
+  ts_ls = require 'config.lsp.typescript',
   tailwindcss = {},
   cssls = require 'config.lsp.css',
 }
