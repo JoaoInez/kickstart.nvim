@@ -6,6 +6,7 @@ M.servers = {
   ts_ls = require 'config.lsp.typescript',
   tailwindcss = {},
   cssls = require 'config.lsp.css',
+  hyprls = require 'config.lsp.hyprland',
 }
 
 -- NOTE: Additional linters
