@@ -49,7 +49,7 @@ return {
     require('nvim-treesitter.configs').setup(opts)
 
     vim.filetype.add {
-      pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang' },
+      pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang', ['dot_zshrc'] = 'zsh' },
     }
 
     -- NOTE: There are additional nvim-treesitter modules that you can use to interact
