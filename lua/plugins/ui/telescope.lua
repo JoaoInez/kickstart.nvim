@@ -62,7 +62,7 @@ return {
     local builtin = require 'telescope.builtin'
 
     vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind open [B]uffers' })
+    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<leader>ff', function()
       builtin.find_files { hidden = true, no_ignore = true }
     end, { desc = '[F]ind [F]iles' })
