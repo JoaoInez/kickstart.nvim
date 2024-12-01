@@ -7,6 +7,7 @@ M.servers = {
   tailwindcss = {},
   cssls = require 'config.lsp.css',
   hyprls = require 'config.lsp.hyprland',
+  volar = require 'config.lsp.vue',
 }
 
 -- NOTE: Additional linters

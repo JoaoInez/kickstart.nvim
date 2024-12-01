@@ -12,6 +12,7 @@ M.formatters = {
   json = { 'prettierd' },
   jsonc = { 'prettierd' },
   yaml = { 'prettierd' },
+  vue = { 'prettierd' },
   -- c = { 'clang-format' },
   -- cpp = { 'clang-format' },
 }

@@ -30,6 +30,8 @@ return {
       'yaml',
       'tmux',
       'hyprlang',
+      'vue',
+      'css',
     },
     auto_install = true,
     highlight = {
