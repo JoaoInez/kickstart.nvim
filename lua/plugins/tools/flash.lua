@@ -4,7 +4,7 @@ return {
   event = 'VeryLazy',
   keys = {
     {
-      'ss',
+      'sj',
       mode = { 'n', 'o', 'x' },
       function()
         require('flash').jump {
@@ -14,7 +14,7 @@ return {
       desc = 'Flash forwards',
     },
     {
-      'sw',
+      'sk',
       mode = { 'n', 'o', 'x' },
       function()
         require('flash').jump {
@@ -24,7 +24,7 @@ return {
       desc = 'Flash backwards',
     },
     {
-      'sj',
+      'ss',
       mode = { 'n', 'o', 'x' },
       function()
         require('flash').jump()
@@ -32,7 +32,7 @@ return {
       desc = 'Flash jump',
     },
     {
-      'sc',
+      'sw',
       mode = { 'n', 'o', 'x' },
       function()
         require('flash').jump {
@@ -61,12 +61,12 @@ return {
   opts = {
     modes = {
       search = {
-        enabled = false,
+        enabled = true,
       },
       char = {
-        enabled = false,
-        jump_labels = false,
-        highlight = { backdrop = false },
+        enabled = true,
+        jump_labels = true,
+        -- highlight = { backdrop = false },
       },
     },
   },
