@@ -2,6 +2,18 @@ return {
   'folke/noice.nvim',
   dependencies = {
     'MunifTanjim/nui.nvim',
+    {
+      'rcarriga/nvim-notify',
+      opts = {
+        background_colour = '#000000',
+        on_open = function(win)
+          vim.api.nvim_win_set_config(win, { zindex = 100 })
+        end,
+      },
+      init = function()
+        vim.notify = require 'notify'
+      end,
+    },
   },
   event = 'VeryLazy',
   opts = {
@@ -30,7 +42,7 @@ return {
     routes = {
       {
         filter = {
-          event = 'msg_show',
+          -- event = 'msg_show',
           any = {
             { find = '%d+L, %d+B' },
             { find = '; after #%d+' },
@@ -39,7 +51,8 @@ return {
             { find = '%d more lines' },
             { find = 'written' },
             { find = 'yanked' },
-            { find = 'No lines' },
+            { find = 'No lines in buffer' },
+            { find = 'No information available' },
             { kind = 'search_count' },
           },
         },

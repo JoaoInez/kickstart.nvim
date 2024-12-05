@@ -1,3 +1,5 @@
+---@diagnostic disable: missing-fields
+
 return { -- Autocompletion
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
@@ -33,14 +35,22 @@ return { -- Autocompletion
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'roobert/tailwindcss-colorizer-cmp.nvim',
   },
+
   config = function()
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
+    local tailwind_colorizer = require 'tailwindcss-colorizer-cmp'
+
     luasnip.config.setup {}
+    tailwind_colorizer.setup {}
 
     cmp.setup {
+      formatting = {
+        format = tailwind_colorizer.formatter,
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)

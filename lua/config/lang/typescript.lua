@@ -1,6 +1,8 @@
 ---@diagnostic disable: missing-fields, assign-type-mismatch
 
-return {
+local M = {}
+
+M = {
   on_attach = function()
     vim.keymap.set('n', '<leader>co', function()
       vim.lsp.buf.code_action {
@@ -9,25 +11,25 @@ return {
           only = { 'source.organizeImports' },
         },
       }
-    end, { desc = '[C]ode: [O]rganize imports' })
+    end, { desc = 'LSP: [C]ode: [O]rganize imports' })
 
     vim.keymap.set('n', '<leader>cr', function()
-      vim.lsp.buf.code_action {
-        apply = true,
-        context = {
-          only = { 'source.removeUnusedImports.ts' },
-        },
-      }
-    end, { desc = '[C]ode: [R]emove unused imports' })
-
-    vim.keymap.set('n', '<leader>cm', function()
       vim.lsp.buf.code_action {
         apply = true,
         context = {
           only = { 'source.removeUnused.ts' },
         },
       }
-    end, { desc = '[C]ode: Add [M]issing imports' })
+    end, { desc = 'LSP: [C]ode: [R]emove unused imports' })
+
+    vim.keymap.set('n', '<leader>cm', function()
+      vim.lsp.buf.code_action {
+        apply = true,
+        context = {
+          only = { 'source.addMissingImports.ts' },
+        },
+      }
+    end, { desc = 'LSP: [C]ode: Add [M]issing imports' })
   end,
   filetypes = {
     'javascript',
@@ -36,6 +38,7 @@ return {
     'typescript',
     'typescriptreact',
     'typescript.tsx',
+    'vue',
   },
   settings = {
     complete_function_calls = true,
@@ -48,6 +51,7 @@ return {
           enableServerSideFuzzyMatch = true,
         },
       },
+      tsserver = { globalPlugins = {} },
     },
     typescript = {
       updateImportsOnFileMove = { enabled = 'always' },
@@ -64,6 +68,20 @@ return {
       },
     },
   },
+  -- INFO: https://github.com/yioneko/vtsls/issues/148
+  before_init = function(params, config)
+    local result = vim.system({ 'npm', 'query', '#vue' }, { cwd = params.workspaceFolders[1].name, text = true }):wait()
+    if result.stdout ~= '[]' then
+      local vuePluginConfig = {
+        name = '@vue/typescript-plugin',
+        location = require('mason-registry').get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server',
+        languages = { 'vue' },
+        configNamespace = 'typescript',
+        enableForWorkspaceTypeScriptVersions = true,
+      }
+      table.insert(config.settings.vtsls.tsserver.globalPlugins, vuePluginConfig)
+    end
+  end,
   keys = {
     {
       '<leader>co',
@@ -80,3 +98,5 @@ return {
     },
   },
 }
+
+return M

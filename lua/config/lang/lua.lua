@@ -1,4 +1,6 @@
-return {
+local M = {}
+
+M = {
   -- cmd = {...},
   -- filetypes = { ...},
   -- capabilities = {},
@@ -12,3 +14,5 @@ return {
     },
   },
 }
+
+return M
