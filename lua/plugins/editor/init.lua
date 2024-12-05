@@ -8,4 +8,5 @@ return {
   require 'plugins.editor.vim-tmux-navigator',
   require 'plugins.editor.trouble',
   require 'plugins.editor.harpoon',
+  require 'plugins.editor.flash',
 }

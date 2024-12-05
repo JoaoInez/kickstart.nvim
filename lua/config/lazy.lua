@@ -30,7 +30,7 @@ require('lazy').setup({
   -- colorscheme that will be used when installing plugins.
   -- install = { colorscheme = { 'catppuccin' } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = true, notify = false },
 
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
