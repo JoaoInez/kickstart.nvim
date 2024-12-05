@@ -22,16 +22,15 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  require 'plugins.coding',
-  require 'plugins.colorscheme',
-  require 'plugins.dap',
-  require 'plugins.editor',
-  require 'plugins.formatting',
-  require 'plugins.linting',
-  require 'plugins.lsp',
-  require 'plugins.mini',
-  require 'plugins.treesitter',
-  require 'plugins.ui',
+  spec = {
+    -- import your plugins
+    { import = 'plugins' },
+  },
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  -- install = { colorscheme = { 'catppuccin' } },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
 
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!

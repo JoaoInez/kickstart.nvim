@@ -16,22 +16,37 @@ return { -- Collection of various small independent plugins/modules
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
-    -- Simple and easy statusline.
-    --  You could remove this setup call if you don't like it,
-    --  and try some other statusline plugin
-    local statusline = require 'mini.statusline'
-    -- set use_icons to true if you have a Nerd Font
-    statusline.setup { use_icons = vim.g.have_nerd_font }
+    -- Use CTL + ALT + <hjkl> to move text
+    require('mini.move').setup {
+      mappings = {
+        -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+        left = '<C-M-h>',
+        right = '<C-M-l>',
+        down = '<C-M-j>',
+        up = '<C-M-k>',
 
-    -- You can configure sections in the statusline by overriding their
-    -- default behavior. For example, here we set the section for
-    -- cursor location to LINE:COLUMN
-    ---@diagnostic disable-next-line: duplicate-set-field
-    statusline.section_location = function()
-      return '%2l:%-2v'
-    end
+        -- Move current line in Normal mode
+        line_left = '<C-M-h>',
+        line_right = '<C-M-l>',
+        line_down = '<C-M-j>',
+        line_up = '<C-M-k>',
+      },
+    }
 
-    -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
+    -- TODO: Add tailwind support
+    require('mini.hipatterns').setup()
+
+    -- Add indentation guides
+    require('mini.indentscope').setup {
+      draw = {
+        delay = 0,
+        animation = require('mini.indentscope').gen_animation.none(),
+      },
+      -- options = { border = 'top', try_as_border = true },
+      symbol = '│',
+    }
+
+    -- Toggle split arrays and objects with gS
+    require('mini.splitjoin').setup()
   end,
 }

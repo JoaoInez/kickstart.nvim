@@ -13,13 +13,38 @@ return {
   keys = {
     { '<leader>fe', ':Neotree reveal float<CR>', desc = '[F]ile [E]xplorer', silent = true },
   },
-  -- opts = {
-  --   filesystem = {
-  --     window = {
-  --       mappings = {
-  --         ['\\'] = 'close_window',
-  --       },
-  --     },
-  --   },
-  -- },
+  opts = {
+    filesystem = {
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        hide_gitignored = true,
+      },
+    },
+    default_component_configs = {
+      indent = {
+        with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+        expander_collapsed = '',
+        expander_expanded = '',
+        expander_highlight = 'NeoTreeExpander',
+      },
+      modified = {
+        symbol = ' ',
+        highlight = 'NeoTreeModified',
+      },
+      git_status = {
+        symbols = {
+          added = '',
+          deleted = '',
+          modified = '',
+          renamed = '',
+          untracked = '',
+          ignored = '',
+          unstaged = '',
+          staged = '',
+          conflict = '',
+        },
+      },
+    },
+  },
 }
