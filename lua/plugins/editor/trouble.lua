@@ -1,3 +1,5 @@
+---@diagnostic disable: missing-parameter, missing-fields
+
 return {
   'folke/trouble.nvim',
   cmd = { 'Trouble' },

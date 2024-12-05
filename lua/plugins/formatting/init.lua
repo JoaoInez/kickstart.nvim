@@ -1,3 +1,3 @@
 return {
-  require 'plugins.formatting.conform-nvim'
+  require 'plugins.formatting.conform-nvim',
 }
