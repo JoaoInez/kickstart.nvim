@@ -34,6 +34,7 @@ M.formatters_by_filetype = {
   typescriptreact = { 'prettierd' },
 }
 
+-- TODO: Setup linters and eslint
 M.linters = {
   'eslint_d',
 }

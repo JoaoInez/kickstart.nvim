@@ -11,7 +11,7 @@ M = {
           only = { 'source.organizeImports' },
         },
       }
-    end, { desc = 'LSP: [C]ode: [O]rganize imports' })
+    end, { desc = 'Organize Imports (Typescript)' })
 
     vim.keymap.set('n', '<leader>cr', function()
       vim.lsp.buf.code_action {
@@ -20,7 +20,7 @@ M = {
           only = { 'source.removeUnused.ts' },
         },
       }
-    end, { desc = 'LSP: [C]ode: [R]emove unused imports' })
+    end, { desc = 'Remove Unused Imports (Typescript)' })
 
     vim.keymap.set('n', '<leader>cm', function()
       vim.lsp.buf.code_action {
@@ -29,7 +29,7 @@ M = {
           only = { 'source.addMissingImports.ts' },
         },
       }
-    end, { desc = 'LSP: [C]ode: Add [M]issing imports' })
+    end, { desc = 'Add Missing Imports (Typescript)' })
   end,
   filetypes = {
     'javascript',

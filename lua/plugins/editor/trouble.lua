@@ -3,20 +3,13 @@
 return {
   'folke/trouble.nvim',
   cmd = { 'Trouble' },
-  opts = {
-    modes = {
-      lsp = {
-        win = { position = 'right' },
-      },
-    },
-  },
+  opts = { focus = true },
   keys = {
-    { '<leader>qx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
-    { '<leader>qX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer Diagnostics (Trouble)' },
-    { '<leader>cs', '<cmd>Trouble symbols toggle<cr>', desc = 'Symbols (Trouble)' },
-    { '<leader>cS', '<cmd>Trouble lsp toggle<cr>', desc = 'LSP references/definitions/... (Trouble)' },
-    { '<leader>qL', '<cmd>Trouble loclist toggle<cr>', desc = 'Location List (Trouble)' },
-    { '<leader>qQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List (Trouble)' },
+    { '<leader>dx', '<cmd>Trouble diagnostics toggle filter.buf=0 win.position=left win.size=0.2<cr>', desc = 'Document Diagnostics (Trouble)' },
+    { '<leader>dS', '<cmd>Trouble symbols toggle win.position=left win.size=0.2 focus=true<cr>', desc = 'Document Symbols (Trouble)' },
+    { '<leader>wx', '<cmd>Trouble diagnostics toggle win.position=left win.size=0.2<cr>', desc = 'Workspace Diagnostics (Trouble)' },
+    { '<leader>jR', '<cmd>Trouble lsp toggle win.position=left win.size=0.2<cr>', desc = 'To References/Definitions/... (Trouble)' },
+    { '<leader>q', '<cmd>Trouble quickfix toggle<cr>', desc = 'Quickfix List (Trouble)' },
     {
       '[q',
       function()

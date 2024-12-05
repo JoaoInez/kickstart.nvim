@@ -8,7 +8,7 @@ local map = vim.keymap
 map.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-map.set('n', '<leader>ql', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- map.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Document Diagnostics' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -33,9 +33,9 @@ map.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-map.set('n', '<leader>s', '<cmd> w <cr>', { desc = '[S]ave current file' })
-map.set('n', '<leader>x', '<cmd> xa <cr>', { desc = '[X] Save and close Neovim' })
-map.set('n', '<leader>qq', '<cmd> qa <cr>', { desc = '[Q]uit Neovim' })
+map.set('n', '<leader>s', '<cmd>w<cr>', { desc = 'Save Current File' })
+map.set('n', '<leader>x', '<cmd>xa<cr>', { desc = 'Save and Quit Neovim' })
+-- map.set('n', '<leader>q', '<cmd>qa<cr>', { desc = 'Quit Neovim' })
 
 -- Page jumping centers cursor
 map.set('n', '<C-d>', '<C-d>zz')

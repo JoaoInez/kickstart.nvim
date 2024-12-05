@@ -33,6 +33,7 @@ return {
       dashboard.button("t", " " .. " Find text",       [[<cmd> Telescope live_grep <cr>]]),
       dashboard.button("e", "󰙅 " .. " File explorer",   "<cmd> Neotree reveal float <cr>"),
       dashboard.button("s", " " .. " Restore session", "<cmd> lua require('harpoon'):list():select(1) <cr>"),
+      dashboard.button("T", "󰄲 " .. " Todos",           "<cmd> TodoTelescope <cr>"),
       { type = "padding", val = 2, opts = {} },
       { type = "text", val = "Settings", opts = { hl = "SpecialComment", position = "center" } },
       { type = "padding", val = 1, opts = {} },

@@ -11,7 +11,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '<leader>fe', ':Neotree reveal float<CR>', desc = '[F]ile [E]xplorer', silent = true },
+    { '<leader>fe', ':Neotree reveal float<CR>', desc = 'File Explorer', silent = true },
   },
   opts = {
     filesystem = {
