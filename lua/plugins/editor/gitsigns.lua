@@ -33,10 +33,10 @@ return {
       },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
-        local map = require('util').bmap(bufnr)
+        local bmap = require('util').bmap(bufnr)
 
         -- Navigation
-        map(']c', function()
+        bmap(']c', function()
           if vim.wo.diff then
             vim.cmd.normal { ']c', bang = true }
           else
@@ -44,7 +44,7 @@ return {
           end
         end, { desc = 'Next Git Change' })
 
-        map('[c', function()
+        bmap('[c', function()
           if vim.wo.diff then
             vim.cmd.normal { '[c', bang = true }
           else
@@ -54,27 +54,27 @@ return {
 
         -- Actions
         -- visual mode
-        map('<leader>gs', function()
+        bmap('<leader>gs', function()
           gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, { desc = 'Stage Hunk' }, 'v')
-        map('<leader>gr', function()
+        bmap('<leader>gr', function()
           gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, { desc = 'Reset Hunk' }, 'v')
         -- normal mode
-        map('<leader>gs', gitsigns.stage_hunk, { desc = 'Stage Hunk' })
-        map('<leader>gr', gitsigns.reset_hunk, { desc = 'Reset Hunk' })
-        map('<leader>gS', gitsigns.stage_buffer, { desc = 'Stage File' })
-        map('<leader>gu', gitsigns.undo_stage_hunk, { desc = 'Undo Stage Hunk' })
-        map('<leader>gR', gitsigns.reset_buffer, { desc = 'Reset File' })
-        map('<leader>gp', gitsigns.preview_hunk, { desc = 'Preview Hunk' })
-        map('<leader>gb', gitsigns.blame_line, { desc = 'Blame Line' })
-        map('<leader>gd', gitsigns.diffthis, { desc = 'Diff against index' })
-        map('<leader>gD', function()
+        bmap('<leader>gs', gitsigns.stage_hunk, { desc = 'Stage Hunk' })
+        bmap('<leader>gr', gitsigns.reset_hunk, { desc = 'Reset Hunk' })
+        bmap('<leader>gS', gitsigns.stage_buffer, { desc = 'Stage File' })
+        bmap('<leader>gu', gitsigns.undo_stage_hunk, { desc = 'Undo Stage Hunk' })
+        bmap('<leader>gR', gitsigns.reset_buffer, { desc = 'Reset File' })
+        bmap('<leader>gp', gitsigns.preview_hunk, { desc = 'Preview Hunk' })
+        bmap('<leader>gb', gitsigns.blame_line, { desc = 'Blame Line' })
+        bmap('<leader>gd', gitsigns.diffthis, { desc = 'Diff against index' })
+        bmap('<leader>gD', function()
           gitsigns.diffthis '@'
         end, { desc = 'Diff against last commit' })
         -- Toggles
-        map('<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Blame Line (Git)' })
-        map('<leader>td', gitsigns.toggle_deleted, { desc = 'Deleted Hunks (Git)' })
+        bmap('<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Blame Line (Git)' })
+        bmap('<leader>td', gitsigns.toggle_deleted, { desc = 'Deleted Hunks (Git)' })
       end,
     },
   },

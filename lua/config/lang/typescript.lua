@@ -1,5 +1,3 @@
----@diagnostic disable: missing-fields, assign-type-mismatch
-
 local M = {}
 
 M = {

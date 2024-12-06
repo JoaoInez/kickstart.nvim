@@ -3,13 +3,33 @@
 return {
   'folke/trouble.nvim',
   cmd = { 'Trouble' },
-  opts = { focus = true },
+  opts = {
+    win = {
+      position = 'right',
+      size = 0.2,
+    },
+    modes = {
+      telescope = {
+        focus = true,
+      },
+    },
+    -- preview = {
+    --   type = 'float',
+    --   relative = 'editor',
+    --   border = 'none',
+    --   title = 'Preview',
+    --   title_pos = 'center',
+    --   position = { 0, 0 },
+    --   size = { width = 0.8, height = 1 },
+    --   zindex = 200,
+    -- },
+  },
   keys = {
-    { '<leader>dx', '<cmd>Trouble diagnostics toggle win.position=right win.size=0.2 filter.buf=0<cr>', desc = 'Diagnostics (Trouble)' },
-    { '<leader>dS', '<cmd>Trouble symbols toggle win.position=right win.size=0.2 focus=true<cr>', desc = 'Symbols (Trouble)' },
-    { '<leader>wx', '<cmd>Trouble diagnostics toggle win.position=right win.size=0.2<cr>', desc = 'Diagnostics (Trouble)' },
-    { '<leader>jR', '<cmd>Trouble lsp toggle win.position=right win.size=0.2<cr>', desc = 'References/Definitions/... (Trouble)' },
-    { '<leader>q', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List (Trouble)' },
+    { '<leader>dx', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Diagnostics (Trouble)' },
+    { '<leader>dS', '<cmd>Trouble symbols toggle<cr>', desc = 'Symbols (Trouble)' },
+    { '<leader>wx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
+    { '<leader>jR', '<cmd>Trouble lsp toggle<cr>', desc = 'References/Definitions/... (Trouble)' },
+    { '<leader>q', '<cmd>Trouble telescope toggle<cr>', desc = 'Telescope Quicklist (Trouble)' },
     {
       '[q',
       function()

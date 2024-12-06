@@ -23,21 +23,6 @@ return {
         ['vim.lsp.util.stylize_markdown'] = true,
         ['cmp.entry.get_documentation'] = true,
       },
-      progress = {
-        enabled = true,
-        format = 'lsp_progress',
-        format_done = 'lsp_progress_done',
-        view = 'notify',
-      },
-    },
-    views = {
-      notify = {
-        replace = true,
-      },
-    },
-    notify = {
-      enabled = true,
-      view = 'notify',
     },
     routes = {
       {
@@ -54,7 +39,6 @@ return {
             { find = 'No information available' },
           },
         },
-        view = 'notify',
         opts = { skip = true },
       },
     },
