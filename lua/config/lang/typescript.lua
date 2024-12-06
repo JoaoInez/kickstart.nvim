@@ -4,7 +4,9 @@ local M = {}
 
 M = {
   on_attach = function()
-    vim.keymap.set('n', '<leader>co', function()
+    local map = require('util').map
+
+    map('<leader>co', function()
       vim.lsp.buf.code_action {
         apply = true,
         context = {
@@ -13,7 +15,7 @@ M = {
       }
     end, { desc = 'Organize Imports (Typescript)' })
 
-    vim.keymap.set('n', '<leader>cr', function()
+    map('<leader>cr', function()
       vim.lsp.buf.code_action {
         apply = true,
         context = {
@@ -22,7 +24,7 @@ M = {
       }
     end, { desc = 'Remove Unused Imports (Typescript)' })
 
-    vim.keymap.set('n', '<leader>cm', function()
+    map('<leader>cm', function()
       vim.lsp.buf.code_action {
         apply = true,
         context = {

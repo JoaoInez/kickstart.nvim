@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
       'startify',
       'toggleterm',
       'Trouble',
+      'trouble',
     }
     if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
       vim.b.miniindentscope_disable = true

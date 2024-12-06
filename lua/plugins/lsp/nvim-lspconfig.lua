@@ -15,6 +15,7 @@ return {
     'hrsh7th/cmp-nvim-lsp',
   },
   config = function()
+    local map = require('util').map
     -- Brief aside: **What is LSP?**
     --
     -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -41,9 +42,9 @@ return {
     -- and elegantly composed help section, `:help lsp-vs-treesitter`
 
     -- You can press `g?` for help in this menu.
-    vim.keymap.set('n', '<leader>,m', '<cmd> Mason <cr>', { desc = 'Mason' })
-    vim.keymap.set('n', '<leader>,l', '<cmd> Lazy <cr>', { desc = 'Lazy' })
-    vim.keymap.set('n', '<leader>,i', '<cmd> LspInfo <cr>', { desc = 'LSP Info' })
+    map('<leader>,m', '<cmd> Mason <cr>', { desc = 'Mason' })
+    map('<leader>,l', '<cmd> Lazy <cr>', { desc = 'Lazy' })
+    map('<leader>,i', '<cmd> LspInfo <cr>', { desc = 'LSP Info' })
 
     --  This function gets run when an LSP attaches to a particular buffer.
     --    That is to say, every time a new file is opened that is associated with
@@ -52,52 +53,44 @@ return {
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
-        -- NOTE: Remember that Lua is a real programming language, and as such it is possible
-        -- to define small helper and utility functions so you don't have to repeat yourself.
-        --
-        -- In this case, we create a function that lets us more easily define mappings specific
-        -- for LSP related items. It sets the mode, buffer and description for us each time.
-        local map = function(keys, func, desc, mode)
-          mode = mode or 'n'
-          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
-        end
+        local map = require('util').bmap(event.buf)
 
         -- To the definition of the word under your cursor.
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-t>.
-        map('<leader>jd', require('telescope.builtin').lsp_definitions, 'To the Definition')
+        map('<leader>jd', require('telescope.builtin').lsp_definitions, { desc = 'Definition' })
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map('<leader>jD', vim.lsp.buf.declaration, 'To the Declaration')
+        map('<leader>jD', vim.lsp.buf.declaration, { desc = 'Declaration' })
 
         -- Find references for the word under your cursor.
-        map('<leader>jr', require('telescope.builtin').lsp_references, 'To References (Telescope)')
+        map('<leader>jr', require('telescope.builtin').lsp_references, { desc = 'References (Telescope)' })
 
         -- To the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
-        map('<leader>ji', require('telescope.builtin').lsp_implementations, 'To the Implementation')
+        map('<leader>ji', require('telescope.builtin').lsp_implementations, { desc = 'Implementation' })
 
         -- To the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map('<leader>jt', require('telescope.builtin').lsp_type_definitions, 'To the Type Definition')
+        map('<leader>jt', require('telescope.builtin').lsp_type_definitions, { desc = 'Type Definition' })
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols (Telescope)')
+        map('<leader>ds', require('telescope.builtin').lsp_document_symbols, { desc = 'Symbols (Telescope)' })
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols (Telescope)')
+        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = 'Symbols (Telescope)' })
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
-        map('<leader>cr', vim.lsp.buf.rename, 'Rename Variable')
+        map('<leader>cr', vim.lsp.buf.rename, { desc = 'Rename Variable' })
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
-        map('<leader>ca', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
+        map('<leader>ca', vim.lsp.buf.code_action, { desc = 'Action' }, { 'n', 'x' })
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -135,7 +128,7 @@ return {
         if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
           map('<leader>th', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-          end, 'Inlay Hints (LSP)')
+          end, { desc = 'Inlay Hints (LSP)' })
         end
       end,
     })

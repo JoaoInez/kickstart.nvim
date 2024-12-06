@@ -28,7 +28,7 @@ return {
     dashboard.section.buttons.val = {
       { type = "text", val = "Quick actions", opts = { hl = "SpecialComment", position = "center" } },
       { type = "padding", val = 1, opts = {} },
-      dashboard.button("n", " " .. " New file",        [[<cmd> ene <BAR> startinsert <cr>]]),
+      dashboard.button("n", " " .. " New file",        [[<cmd> ene <cr>]]),
       dashboard.button("f", " " .. " Find file",       "<cmd> Telescope find_files hidden=true <cr>"),
       dashboard.button("t", " " .. " Find text",       [[<cmd> Telescope live_grep <cr>]]),
       dashboard.button("e", "󰙅 " .. " File explorer",   "<cmd> Neotree reveal float <cr>"),

@@ -42,7 +42,6 @@ return {
     routes = {
       {
         filter = {
-          -- event = 'msg_show',
           any = {
             { find = '%d+L, %d+B' },
             { find = '; after #%d+' },
@@ -53,7 +52,6 @@ return {
             { find = 'yanked' },
             { find = 'No lines in buffer' },
             { find = 'No information available' },
-            { kind = 'search_count' },
           },
         },
         view = 'notify',
@@ -70,11 +68,11 @@ return {
   keys = {
     -- { "<leader>n", "", desc = "+noice"},
     { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
-    { "<leader>nl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-    { "<leader>nh", function() require("noice").cmd("history") end, desc = "Noice History" },
-    { "<leader>na", function() require("noice").cmd("all") end, desc = "Noice All" },
-    { "<leader>nd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
-    { "<leader>nt", function() require("noice").cmd("pick") end, desc = "Noice Picker (Telescope)" },
+    { "<leader>ml", function() require("noice").cmd("last") end, desc = "Last Message" },
+    { "<leader>mh", function() require("noice").cmd("history") end, desc = "History" },
+    { "<leader>ma", function() require("noice").cmd("all") end, desc = "All" },
+    { "<leader>md", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+    { "<leader>mt", function() require("noice").cmd("pick") end, desc = "Picker (Telescope)" },
     -- { "<C-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
     -- { "<C-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
   },

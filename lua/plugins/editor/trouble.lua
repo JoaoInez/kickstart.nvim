@@ -5,11 +5,11 @@ return {
   cmd = { 'Trouble' },
   opts = { focus = true },
   keys = {
-    { '<leader>dx', '<cmd>Trouble diagnostics toggle filter.buf=0 win.position=left win.size=0.2<cr>', desc = 'Document Diagnostics (Trouble)' },
-    { '<leader>dS', '<cmd>Trouble symbols toggle win.position=left win.size=0.2 focus=true<cr>', desc = 'Document Symbols (Trouble)' },
-    { '<leader>wx', '<cmd>Trouble diagnostics toggle win.position=left win.size=0.2<cr>', desc = 'Workspace Diagnostics (Trouble)' },
-    { '<leader>jR', '<cmd>Trouble lsp toggle win.position=left win.size=0.2<cr>', desc = 'To References/Definitions/... (Trouble)' },
-    { '<leader>q', '<cmd>Trouble quickfix toggle<cr>', desc = 'Quickfix List (Trouble)' },
+    { '<leader>dx', '<cmd>Trouble diagnostics toggle win.position=right win.size=0.2 filter.buf=0<cr>', desc = 'Diagnostics (Trouble)' },
+    { '<leader>dS', '<cmd>Trouble symbols toggle win.position=right win.size=0.2 focus=true<cr>', desc = 'Symbols (Trouble)' },
+    { '<leader>wx', '<cmd>Trouble diagnostics toggle win.position=right win.size=0.2<cr>', desc = 'Diagnostics (Trouble)' },
+    { '<leader>jR', '<cmd>Trouble lsp toggle win.position=right win.size=0.2<cr>', desc = 'References/Definitions/... (Trouble)' },
+    { '<leader>q', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List (Trouble)' },
     {
       '[q',
       function()

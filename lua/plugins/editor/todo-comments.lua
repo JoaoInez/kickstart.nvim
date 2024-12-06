@@ -20,7 +20,7 @@ return {
       end,
       desc = 'Previous Todo Comment',
     },
-    { '<leader>wt', '<cmd>Trouble todo toggle win.position=left win.size=0.2<cr>', desc = 'Todo (Trouble)' },
+    { '<leader>wt', '<cmd>Trouble todo toggle win.position=right win.size=0.2<cr>', desc = 'Todo (Trouble)' },
     { '<leader>wT', '<cmd>TodoTelescope<cr>', desc = 'Todo (Telescope)' },
   },
 }
